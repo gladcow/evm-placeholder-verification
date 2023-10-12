@@ -90,10 +90,10 @@ describe('Proof Tests', function () {
         let proofPath = "./data/template/proof.bin"
         let publicInputPath = "./data/unified_addition/public_input.json";
         let params = getVerifierParams(configPath,proofPath, publicInputPath);
-        await deployments.fixture(['testPlaceholderAPIConsumerFixture', 'placeholderVerifierFixture']);
+        await deployments.fixture(['testPlaceholderAPIConsumerFixture', 'template_gate_argument_split_genFixture', 'placeholderVerifierFixture']);
 
         let testPlaceholderAPI = await ethers.getContract('TestPlaceholderVerifier');
-        let templateGate = await ethers.getContract('template_gate_argument_split_genFixture');
+        let templateGate = await ethers.getContract('template_gate_argument_split_gen');
         let placeholderVerifier = await ethers.getContract('PlaceholderVerifier');
         
         await testPlaceholderAPI.initialize(placeholderVerifier.address);
