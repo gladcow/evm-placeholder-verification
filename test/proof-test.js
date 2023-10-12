@@ -88,9 +88,9 @@ describe('Proof Tests', function () {
     it("template", async function () {
         let configPath = "./data/template/circuit_params.json"
         let proofPath = "./data/template/proof.bin"
-        let publicInputPath = "./data/template/public_input.json";
+        let publicInputPath = "./data/unified_addition/public_input.json";
         let params = getVerifierParams(configPath,proofPath, publicInputPath);
-        await deployments.fixture(['testPlaceholderAPIConsumerFixture', 'template_gate_argument_split_genFixture', 'placeholderVerifierFixture']);
+        await deployments.fixture(['testPlaceholderAPIConsumerFixture', 'placeholderVerifierFixture']);
 
         let testPlaceholderAPI = await ethers.getContract('TestPlaceholderVerifier');
         let templateGate = await ethers.getContract('template_gate_argument_split_genFixture');
