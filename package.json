@@ -41,6 +41,7 @@
   "files": [
     "/contracts/**/*.sol",
     "/contracts/test/**/*.sol",
+    "/contracts/test/**/**/*.sol",
     "/build/contracts/*.json",
     "!/contracts/mocks/**/*"
   ],
